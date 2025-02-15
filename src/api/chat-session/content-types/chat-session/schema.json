@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_sessions",
+  "info": {
+    "singularName": "chat-session",
+    "pluralName": "chat-sessions",
+    "displayName": "ChatSession"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "uid": {
+      "type": "uid"
+    },
+    "sessionid": {
+      "type": "uid"
+    },
+    "starttime": {
+      "type": "time"
+    },
+    "endtime": {
+      "type": "time"
+    }
+  }
+}
