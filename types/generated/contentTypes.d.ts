@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiChatSessionChatSession extends Struct.CollectionTypeSchema {
   collectionName: 'chat_sessions';
   info: {
+    description: '';
     displayName: 'ChatSession';
     pluralName: 'chat-sessions';
     singularName: 'chat-session';
@@ -390,7 +391,7 @@ export interface ApiChatSessionChatSession extends Struct.CollectionTypeSchema {
       'api::chat-session.chat-session'
     > &
       Schema.Attribute.Private;
-    messages: Schema.Attribute.Relation<'oneToMany', 'api::message.message'>;
+    message: Schema.Attribute.Relation<'manyToOne', 'api::message.message'>;
     publishedAt: Schema.Attribute.DateTime;
     sessionid: Schema.Attribute.String & Schema.Attribute.Unique;
     starttime: Schema.Attribute.DateTime;
@@ -412,8 +413,8 @@ export interface ApiMessageMessage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    chatsession: Schema.Attribute.Relation<
-      'manyToOne',
+    chatsessions: Schema.Attribute.Relation<
+      'oneToMany',
       'api::chat-session.chat-session'
     >;
     content: Schema.Attribute.Text;

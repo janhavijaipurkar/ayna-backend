@@ -16,14 +16,11 @@
     "content": {
       "type": "text"
     },
-    "chatsession": {
+    "chatsessions": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::chat-session.chat-session",
-      "inversedBy": "messages"
+      "mappedBy": "message"
     }
   }
 }
-
-
-

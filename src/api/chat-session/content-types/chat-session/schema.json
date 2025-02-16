@@ -4,7 +4,8 @@
   "info": {
     "singularName": "chat-session",
     "pluralName": "chat-sessions",
-    "displayName": "ChatSession"
+    "displayName": "ChatSession",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,14 +25,11 @@
     "endtime": {
       "type": "datetime"
     },
-    "messages": {
+    "message": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::message.message",
-      "mappedBy": "chatsession"
+      "inversedBy": "chatsessions"
     }
   }
 }
-
-
-
