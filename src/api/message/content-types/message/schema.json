@@ -4,20 +4,26 @@
   "info": {
     "singularName": "message",
     "pluralName": "messages",
-    "displayName": "message"
+    "displayName": "Message"
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "uid": {
-      "type": "uid"
-    },
     "DateTime": {
       "type": "datetime"
     },
     "content": {
-      "type": "string"
+      "type": "text"
+    },
+    "chatsession": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chat-session.chat-session",
+      "inversedBy": "messages"
     }
   }
 }
+
+
+

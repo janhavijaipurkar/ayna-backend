@@ -11,16 +11,27 @@
   },
   "attributes": {
     "uid": {
-      "type": "uid"
+      "type": "string",
+      "unique": true
     },
     "sessionid": {
-      "type": "uid"
+      "type": "string",
+      "unique": true
     },
     "starttime": {
-      "type": "time"
+      "type": "datetime"
     },
     "endtime": {
-      "type": "time"
+      "type": "datetime"
+    },
+    "messages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::message.message",
+      "mappedBy": "chatsession"
     }
   }
 }
+
+
+
